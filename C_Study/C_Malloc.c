@@ -25,11 +25,10 @@ int main (void){
 	}
 	
 	free(score);
-
-
+	
 	char *pc = NULL;
 	int i = 0;
-	pc = (char *)malloc(100*sizeof(char));
+	pc = (char *)malloc(100*sizeof(char)); // 
 	
 	//printf("%ld\n", malloc_usable_size(pc));
 	
