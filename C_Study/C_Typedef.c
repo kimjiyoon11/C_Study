@@ -32,6 +32,6 @@ int main (void)
 	Person1 result;
 		
 	result = personFunc(A);
-	
+	 
 	printf("%s\n%d\n%d\n%.1f\n", result.name1, result.age1, result.height1, result.weight1 );	
 }
