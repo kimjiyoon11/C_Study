@@ -2,7 +2,7 @@
 #include <jansson.h>
 #include <string.h> 
 
-typedef struct JSONDATA
+typedef struct JSONDATA //Key, Value를 담을 구조체 선언
 {
 	char mKey[1024];
 	char mValue[1024];
@@ -25,15 +25,15 @@ int main (void)
 		
 		size = json_object_size(objValue);	
 		
-		pJsonData = (JSONDATA *)malloc(sizeof(JSONDATA) * size);
+		pJsonData = (JSONDATA *)malloc(sizeof(JSONDATA) * size); // json파일에 대한 size만큼 메모리 할당
 		
 		if(!pJsonData)
 			exit(1);
 							
 		json_object_foreach(objValue, key, value){
 				
-			strcpy((pJsonData+i)->mKey, key);
-			strcpy((pJsonData+i)->mValue, json_string_value(value));
+			strcpy((pJsonData+i)->mKey, key); //key값 저장
+			strcpy((pJsonData+i)->mValue, json_string_value(value)); //value값 저장
 			
 			i++;			
 		}	
@@ -43,14 +43,14 @@ int main (void)
 			
 	for(int j = 0; j < size; j++)
 	{
-		printf("%s : %s\n", (pJsonData+j)->mKey, (pJsonData+j)->mValue);
+		printf("%s : %s\n", (pJsonData+j)->mKey, (pJsonData+j)->mValue); //출력
 	}
 	
 	json_decref(jsonFile);
 		
-	free(pJsonData);
+	free(pJsonData); //메모리 해제
 	
-	pJsonData = NULL;
+	pJsonData = NULL; //초기화
 	
 			
     return 0;
