@@ -1,4 +1,4 @@
-#include <sys/ioctl.h> 
+#include <sys/ioctl.h> //get system info
 #include <net/if.h>  
 #include <string.h> 
 #include <arpa/inet.h>
